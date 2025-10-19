@@ -89,7 +89,8 @@ if st.button("Submit"):
   
    
     explainer = shap.TreeExplainer(XGB)
-    shap_values = explainer.shap_values(input_numerical)
+    shap_values = explainer(input_numerical)
+   # shap_values = explainer.shap_values(input_numerical)
 
     
     st.write("### SHAP Value Force Plot")
