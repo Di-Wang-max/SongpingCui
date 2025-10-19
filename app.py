@@ -87,7 +87,7 @@ if st.button("Submit"):
             st.markdown(f"**{prob:.2f}%**")
 
   
-   print(input_numerical.dtypes)
+    print(input_numerical.dtypes)
     explainer = shap.TreeExplainer(XGB)
     shap_values = explainer(input_numerical).values
    # shap_values = explainer.shap_values(input_numerical)
