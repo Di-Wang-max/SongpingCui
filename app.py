@@ -87,14 +87,16 @@ if st.button("Submit"):
             st.markdown(f"**{prob:.2f}%**")
 
   
-    explainer = shap.TreeExplainer(XGB)
-    shap_values = explainer.shap_values(input_numerical)
+    explainer = shap.Explainer(XGB, input_numerical)
+    shap_values = explainer(input_numerical)
 
     
     st.write("### SHAP Value Force Plot")
     shap.initjs()
     force_plot_visualizer = shap.plots.force(
-        explainer.expected_value, shap_values, input_numericalyuan)
+        explainer.expected_value[0],
+        shap_values.values[0],
+        input_numericalyuan)
     shap.save_html("force_plot.html", force_plot_visualizer)
 
     with open("force_plot.html", "r", encoding="utf-8") as html_file:
