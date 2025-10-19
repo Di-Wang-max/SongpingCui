@@ -68,7 +68,6 @@ if st.button("Submit"):
     XGB = joblib.load("XGB.pkl")
     calibrated = joblib.load("calibrated.pkl")
     scaler = joblib.load("scaler.pkl")
-    st.write(type(XGB))
     
     # Store inputs into dataframe
     input_numerical = np.array([Age,CA199,D_Dimer_D3,NET,Operation_duration,PVR,Pre_D_Dimer]).reshape(1, -1)
