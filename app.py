@@ -86,4 +86,3 @@ if st.button("Submit"):
         else:
             st.markdown(f"**{prob:.2f}%**")
 
-    components.html(html_content, height=400)
