@@ -87,11 +87,8 @@ if st.button("Submit"):
             st.markdown(f"**{prob:.2f}%**")
 
   
-    # 获取 Booster
-    booster = XGB.get_booster()
-
-# 手动构建 Explainer
-    explainer = shap.TreeExplainer(booster)
+   
+    explainer = shap.TreeExplainer(XGB)
     shap_values = explainer.shap_values(input_numerical)
 
     
