@@ -89,7 +89,7 @@ if st.button("Submit"):
   
    
     explainer = shap.TreeExplainer(XGB)
-    shap_values = explainer(input_numerical)
+    shap_values = explainer(input_numerical).values
    # shap_values = explainer.shap_values(input_numerical)
 
     
